@@ -1,0 +1,1 @@
+{"version":3,"file":"makeDataProvider.d.ts","sourceRoot":"","sources":["../src/makeDataProvider.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,MAAM,CAAC;AACnC,OAAO,KAAK,EAAE,YAAY,EAAE,aAAa,EAAE,aAAa,EAAE,MAAM,SAAS,CAAC;AAE1E;;;;;;GAMG;AACH,eAAO,MAAM,gBAAgB,kBACX,aAAa,iBAAiB,aAAa,cAClD,MAAM,OAAO,MAAM,KAAG,SAAS,YAAY,CA6GlD,CAAC;AAEL,eAAe,gBAAgB,CAAC"}
