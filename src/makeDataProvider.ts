@@ -1,6 +1,11 @@
 import type { Client } from "urql";
 import type { DataProvider, NounProviders, VerbProviders } from "./types";
 
+export type MakeDataProvider = (
+  nounProviders: NounProviders,
+  verbProviders: VerbProviders
+) => (client: Client, url: string) => Required<DataProvider>;
+
 /**
  * A simple router to appropriate resourceProviders
  * Each resource maps 1:1 to a "noun"
@@ -8,7 +13,7 @@ import type { DataProvider, NounProviders, VerbProviders } from "./types";
  * binding them to appropriate noun(s).
  *
  */
-export const makeDataProvider =
+export const makeDataProvider: MakeDataProvider =
   (nounProviders: NounProviders, verbProviders: VerbProviders) =>
   (client: Client, url: string): Required<DataProvider> => ({
     create: ({ resource, variables, metaData }) => {
