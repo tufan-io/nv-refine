@@ -1,10 +1,19 @@
 import type { Client } from "urql";
 import type { DataProvider, NounProviders, VerbProviders } from "./types";
 
+// MakeDataProvider initializes the noun & verb providers
 export type MakeDataProvider = (
   nounProviders: NounProviders,
   verbProviders: VerbProviders
-) => (client: Client, url: string) => Required<DataProvider>;
+) => InstantiateDataProvider;
+
+// InstantiateDataProvider binds the data provider to a urql instance with URL.
+// this is done in the client (typically via env vars), as a last step before
+// the dataProvider is usable by refine.
+export type InstantiateDataProvider = (
+  client: Client,
+  url: string
+) => Required<DataProvider>;
 
 /**
  * A simple router to appropriate resourceProviders

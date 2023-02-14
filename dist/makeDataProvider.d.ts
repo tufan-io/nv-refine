@@ -1,6 +1,7 @@
 import type { Client } from "urql";
 import type { DataProvider, NounProviders, VerbProviders } from "./types";
-export type MakeDataProvider = (nounProviders: NounProviders, verbProviders: VerbProviders) => (client: Client, url: string) => Required<DataProvider>;
+export type MakeDataProvider = (nounProviders: NounProviders, verbProviders: VerbProviders) => InstantiateDataProvider;
+export type InstantiateDataProvider = (client: Client, url: string) => Required<DataProvider>;
 /**
  * A simple router to appropriate resourceProviders
  * Each resource maps 1:1 to a "noun"

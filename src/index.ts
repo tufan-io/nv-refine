@@ -5,4 +5,4 @@ export {
   NounGql,
 } from "./types";
 export { makeResourceProvider } from "./makeResourceProvider";
-export { makeDataProvider, MakeDataProvider } from "./makeDataProvider";
+export { makeDataProvider, InstantiateDataProvider } from "./makeDataProvider";
